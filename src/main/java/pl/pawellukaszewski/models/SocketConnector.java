@@ -37,4 +37,16 @@ public class SocketConnector {
         System.out.println("CONNECTED");
     }
 
+    public void sendMessage(String message) {
+        try {
+            session.getBasicRemote().sendText(message);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @OnMessage
+    public void onMessage(Session session, String message) {
+        System.out.println(message);
+    }
 }

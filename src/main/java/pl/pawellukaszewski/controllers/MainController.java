@@ -12,5 +12,7 @@ public class MainController implements Initializable {
 
     public void initialize(URL location, ResourceBundle resources) {
         socketConnector.connect();
+
+        socketConnector.sendMessage("Ping");
     }
 }
