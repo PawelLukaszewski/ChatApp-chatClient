@@ -13,6 +13,7 @@ public class SocketConnector {
     }
 
     private WebSocketContainer container;
+    private Session session;
 
     private SocketConnector() {
         container = ContainerProvider.getWebSocketContainer();
@@ -32,7 +33,7 @@ public class SocketConnector {
 
     @OnOpen
     public void onOpen(Session session) {
-
+        this.session = session;
         System.out.println("CONNECTED");
     }
 
